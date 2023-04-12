@@ -1,31 +1,19 @@
 package main
 
 import (
+	"busquedas"
 	"fmt"
 )
 
-func Burbuja(ListaDesordenada []int) []int {
-	var auxiliar int
-	for i := 0; i < len(ListaDesordenada); i++ {
-		for j := 0; j < len(ListaDesordenada); j++ {
-			if ListaDesordenada[i] > ListaDesordenada[j] {
-				auxiliar = ListaDesordenada[i]
-				ListaDesordenada[i] = ListaDesordenada[j]
-				ListaDesordenada[j] = auxiliar
-			}
-		}
-	}
-	return ListaDesordenada
-}
 func main() {
-	/*arreglo := utiles.GenerarArreglo(10, 1000)
+	/*arreglo := utiles.GenerarArreglo(10, 100000000)
 	buscado := -1
 
 	//fmt.Println(arreglo)
 
 	inicio := time.Now()
 	// Busqueda Lineal
-	fmt.Println(busquedas.BusLineal(arreglo, buscado))
+	busquedas.BusLineal(arreglo, buscado)
 	fmt.Println("Busqueda Lineal: ", time.Since(inicio))
 
 	inicio = time.Now()
@@ -36,10 +24,30 @@ func main() {
 
 	inicio = time.Now()
 	// Busqueda Binaria
-	fmt.Println(busquedas.BusquedaBinaria(arreglo, buscado))
-	fmt.Println("Busqueda Binaria: ", time.Since(inicio))*/
+	busquedas.BusquedaBinaria(arreglo, buscado)
+	fmt.Println("Busqueda Binaria: ", time.Since(inicio))
 
-	numbers := []int{0, 1, 2, 3, 4, 5, 6, 7, 8}
-	Burbuja(numbers)
+	/*Burbujeo(arreglo)
+	fmt.Println("Burbujeo: ", time.Since(inicio))
+
+	Selection(arreglo)
+	fmt.Println("Seleccion: ", time.Since(inicio))
+
+	Insertion(arreglo)
+	fmt.Println("Insercion: ", time.Since(inicio))
+	// ordenamiento por Burbuja, Seleccion e Inserción
+	/*numbers := []int{9, -2, 22, 3, 7, 2, 60, 71, 8}
+	items := []int{9, -2, 22, 3, 7, 2, 60, 71, 8}
+	prueba := []int{2, 1, -1, 4, 3}
+	Burbujeo(numbers)
 	fmt.Println(numbers)
+	Selection(items)
+	fmt.Println(items)
+	Insertion(prueba)
+	fmt.Println(prueba)*/
+
+	arreglo2 := []int{90, -2, 7, -4, 5, 88, 40, 20}
+	b := busquedas.BurbujeoAscendente(arreglo2)
+	fmt.Println(b)
+
 }
